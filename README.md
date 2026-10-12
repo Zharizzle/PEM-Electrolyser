@@ -1,18 +1,18 @@
-# PEM-Electrolyser
-Masters research project
-
+# PEM Electrolyser Model: Calibration and Validation
 
 MATLAB/Simulink model of a PEM water electrolyser, built for the MEng thesis *Electrochemical Modelling and Performance Validation of a PEM Hydrogen Electrolyser* (Stellenbosch University). The model predicts cell voltage from current density and temperature, and calibrates its kinetic parameters against your own polarisation data.
 
 ## Files
 
-- `PEMWE_Model.slx`: the Simulink model
-- `run_model_calibration.m`: calibration script, run automatically by the model
-- `PEMVoltage_fit.m`: helper function called by the calibration
-- `user_data.xlsx`: **your own** polarisation data (see step 2)
-- `all_polarisation_data.xlsx`: literature datasets used for this project only (see below)
-- `calibration_only.m`: calibration script used for the thesis project only
-- `validation_only.m`: validation script used for the thesis project only
+| File | Purpose |
+|---|---|
+| `PEMWE_Model.slx` | The Simulink model |
+| `run_model_calibration.m` | Calibration script, run automatically by the model |
+| `PEMVoltage_fit.m` | Helper function called by the calibration |
+| `user_data.xlsx` | **Your own** polarisation data (see step 2) |
+| `all_polarisation_data.xlsx` | Literature datasets used for this project only (see below) |
+| `calibration_only.m` | Calibration script used for the thesis project only |
+| `validation_only.m` | Validation script used for the thesis project only |
 
 ## Using the model with your own data
 
@@ -28,9 +28,8 @@ The Simulink model (`PEMWE_Model.slx`), `run_model_calibration.m`, any helper fu
 
 Use one row per experimental point, with three columns and exactly these headers:
 
-- `Temperature_C`
-- `CurrentDensity_Acm2`
-- `Voltage_V`
+| Temperature_C | CurrentDensity_Acm2 | Voltage_V |
+|---|---|---|
 
 Every row recorded at a given temperature becomes one point on that temperature's polarisation curve.
 
@@ -74,3 +73,4 @@ These three files were made for the thesis project only.
 - `calibration_only.m` and `validation_only.m` are the stand-alone calibration and validation scripts used to produce the thesis results from those datasets. They are not needed to run the Simulink model with your own data.
 
 To calibrate the model, supply your own measurements in `user_data.xlsx` and follow the steps above.
+
